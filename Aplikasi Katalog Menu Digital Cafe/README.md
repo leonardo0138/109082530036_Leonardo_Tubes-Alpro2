@@ -1,5 +1,6 @@
-Tugas Besar Alpro 2
-Topik:Aplikasi Katalog Menu Digital Cafe
-Anggota Kelompok:
+<h1 Tugas Besar Alpro 2</h1>
+<p>Topik:Aplikasi Katalog Menu Digital Cafe</p>
+<p>Anggota Kelompok:</p>
 1. Leonardo Farriz Garcya (109082530036)
 2. Sukma Aditiya Rafindra ()
+
