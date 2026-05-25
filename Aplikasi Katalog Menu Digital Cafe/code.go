@@ -31,7 +31,7 @@ func tambahMenu(T *tabMenu, n *int) {
 	fmt.Print("Nama Menu: ")
 	fmt.Scan(&T[*n].nama)
 
-	fmt.Print("Kategori (coffee/non-coffee): ")
+	fmt.Print("Kategori (drink-coffee/drink-nonCoffee/food): ")
 	fmt.Scan(&T[*n].kategori)
 
 	fmt.Print("Harga: ")
@@ -79,7 +79,6 @@ func cariID(T tabMenu, n, id int) int {
 			return i
 		}
 	}
-
 	return -1
 }
 
@@ -98,7 +97,7 @@ func ubahMenu(T *tabMenu, n int) {
 		return
 	}
 
-	fmt.Println("/nData yang ditemukan")
+	fmt.Println("\nData yang ditemukan")
 	fmt.Println("1. Nama")
 	fmt.Println("2. Kategori")
 	fmt.Println("3. Harga")
@@ -150,7 +149,7 @@ func hapusMenu(T *tabMenu, n *int) {
 		fmt.Println("Data tidak ditemukan.")
 		return
 	}
-
+	
 	for i = idx; i < *n-1; i++ {
 		T[i] = T[i+1]
 	}
@@ -249,26 +248,30 @@ func binarySearch(T tabMenu, n int, kategori string) {
 func statistik(T tabMenu, n int) {
 	var i int
 	var total int
-	var coffee, noncoffee int
+	var coffee, noncoffee, food int
 	var rata float64
 
 	for i = 0; i < n; i++ {
 		total += T[i].harga
 
-		if T[i].kategori == "coffee" {
+		if T[i].kategori == "drink-coffee" {
 			coffee++
-		} else {
+		} else if T[i].kategori == "drink-noncoffee"{
 			noncoffee++
+		} else if T[i].kategori == "food"{
+			food++
 		}
-	}
+
+		}
 
 	if n > 0 {
 		rata = float64(total) / float64(n)
 	}
 
 	fmt.Println("\n   ~Statistik~    ")
-	fmt.Println("Jumlah coffee     :", coffee)
-	fmt.Println("Jumlah non-coffee :", noncoffee)
+	fmt.Println("Jumlah drink-coffee     :", coffee)
+	fmt.Println("Jumlah drink-noncoffee :", noncoffee)
+	fmt.Println("Jumlah food  : ", food)
 	fmt.Println("Rata-rata harga   :", rata)
 }
 
