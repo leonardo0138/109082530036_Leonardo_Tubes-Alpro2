@@ -15,7 +15,6 @@ type menu struct {
 
 type tabMenu [NMAX]menu
 
-// ================= TAMBAH MENU =================
 func tambahMenu(T *tabMenu, n *int) {
 
 	fmt.Println("\n   ~Tambah Menu~   ")
@@ -48,7 +47,6 @@ func tambahMenu(T *tabMenu, n *int) {
 	fmt.Println("Menu berhasil ditambahkan.")
 }
 
-// ================= TAMPIL MENU =================
 func tampilMenu(T tabMenu, n int) {
 	var i int
 
@@ -70,7 +68,6 @@ func tampilMenu(T tabMenu, n int) {
 	}
 }
 
-// ================= CARI ID =================
 func cariID(T tabMenu, n, id int) int {
 	var i int
 
@@ -82,7 +79,6 @@ func cariID(T tabMenu, n, id int) int {
 	return -1
 }
 
-// ================= UBAH MENU =================
 func ubahMenu(T *tabMenu, n int) {
 	var id, idx int
 	var pilih int
@@ -136,7 +132,6 @@ func ubahMenu(T *tabMenu, n int) {
 
 }
 
-// ================= HAPUS MENU =================
 func hapusMenu(T *tabMenu, n *int) {
 	var id, idx, i int
 
@@ -149,7 +144,7 @@ func hapusMenu(T *tabMenu, n *int) {
 		fmt.Println("Data tidak ditemukan.")
 		return
 	}
-	
+
 	for i = idx; i < *n-1; i++ {
 		T[i] = T[i+1]
 	}
@@ -159,7 +154,6 @@ func hapusMenu(T *tabMenu, n *int) {
 	fmt.Println("Data berhasil dihapus.")
 }
 
-// ================= SEQUENTIAL SEARCH =================
 func sequentialSearch(T tabMenu, n int, kategori string) {
 	var i int
 	found := false
@@ -178,7 +172,6 @@ func sequentialSearch(T tabMenu, n int, kategori string) {
 	}
 }
 
-// ================= SELECTION SORT =================
 func selectionSort(T *tabMenu, n int) {
 	var i, j, min int
 	var temp menu
@@ -198,7 +191,6 @@ func selectionSort(T *tabMenu, n int) {
 	}
 }
 
-// ================= INSERTION SORT =================
 func insertionSort(T *tabMenu, n int) {
 	var i, j int
 	var temp menu
@@ -215,8 +207,6 @@ func insertionSort(T *tabMenu, n int) {
 		T[j+1] = temp
 	}
 }
-
-// ================= BINARY SEARCH =================
 func binarySearch(T tabMenu, n int, kategori string) {
 	var left, right, mid int
 	found := false
@@ -244,7 +234,6 @@ func binarySearch(T tabMenu, n int, kategori string) {
 	}
 }
 
-// ================= STATISTIK =================
 func statistik(T tabMenu, n int) {
 	var i int
 	var total int
@@ -275,7 +264,6 @@ func statistik(T tabMenu, n int) {
 	fmt.Println("Rata-rata harga   :", rata)
 }
 
-// ================= MAIN =================
 func main() {
 
 	var T tabMenu
